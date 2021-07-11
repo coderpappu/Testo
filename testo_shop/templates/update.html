@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop Product Update</title>
+</head>
+<body>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="pro_name"  value="{{product_Update.pro_name}}" placeholder=" product name"><br>
+        <input type="text" name="shop_name" value="{{product_Update.pro_shopName}}"  placeholder=" SHOP name"><br>
+        <input type="text" name="pro_desc" value="{{product_Update.pro_desc}}" placeholder=" product desc"><br>
+        <input type="number" name="pro_price" value="{{product_Update.pro_price}}" placeholder=" product price"><br>
+        <input type="text" name="pro_id" value="{{product_Update.pro_ID}}" placeholder=" product id"><br>
+        <input type="file" name="pro_img" value="{%  static 'img/product_Update.pro_img' %}" placeholder=" product name"><br>
+        <input type="submit" name="save" ><br>
+    </form>
+</body>
+</html>

@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Shop Index</title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css"  href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet"  type="text/css" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet"  type="text/css" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link  rel="stylesheet" type="text/css" href="{%static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'css/style.css'%}">
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top navBarSetting">
+        <div class="container-fluid">
+            <a class=" ml-10 navbar-brand" href="#"><img src="{% static 'img/logo.png' %}" width="90px" height="50px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2  mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="mynavBar" aria-current="page" href="/">Home</a>
+                    </li>
+                   <li class="nav-item">
+                       <a class="nav-link active" id="mynavBar" aria-current="page" href="#">About</a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link active" id="mynavBar" aria-current="page" href="#">Out Menu</a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link active" id="mynavBar" aria-current="page" href="#">Shop</a>
+                   </li>
+                    {% if user.is_authenticated %}
+                        {% if user.username == "shopper" and user.is_staff == 1 %}
+
+                            <li class="nav-item">
+                               <a class="nav-link active" id="mynavBar" aria-current="page" href="shopperApp/shopper">POST</a>
+                           </li>
+                            <li class="nav-item">
+                               <a class="nav-link active" id="mynavBar" aria-current="page" href="shopperApp/logout">Logout</a>
+                           </li><li class="nav-item">
+                               <a class="nav-link active" id="mynavBar" aria-current="page" href="shopAdmin">admin</a>
+                           </li>
+                        {% else %}
+                    <li class="nav-item">
+                               <a class="nav-link active" id="mynavBar" aria-current="page" href="shopperApp/logout">Logout</a>
+                           </li>
+                    <li class="nav-item">
+                       <a class="nav-link active" id="mynavBar" aria-current="page" href="shopperApp/shopper">POST</a>
+                   </li>
+                    {% endif %}
+                    {% else %}
+                   <li class="nav-item">
+                       <a class="nav-link active" id="mynavBar" aria-current="page" href="#">SignUp</a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link active" id="mynavBar" aria-current="page" href="shopperApp/login">Login</a>
+                   </li>
+                    {% endif %}
+
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn bg-warning" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+{% block content %}
+    <section class="hero_burger_wrap">
+        <div class="hero_burger" style="background-image:url({% static 'img/back_hero.jpg' %})">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 hero_text">
+                        <h2>BIG BURGER,<br> LITTLE MONEY</h2>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="herp_burger_img">
+                            <img src="{% static 'img/hero_burger.png' %}" alt="hero_burger">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="flatBurger">
+        <div class="container">
+            <div class="flat_wrap">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="our_product_show">
+                            <img id="iconImg" src="{% static 'img/flat-burger.png' %}" alt="flat-burger">
+                            <h3>burger</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="our_product_show">
+                            <img id="iconImg" src="{% static 'img/donut.png' %}" alt="donut">
+                            <h3>Donut</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="our_product_show">
+                            <img id="iconImg" src="{% static 'img/salad.png' %}" alt="salad">
+                            <h3>Salad</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="our_product_show">
+                            <img id="iconImg" src="{% static 'img/cake.png' %}" alt="cake">
+                            <h3>Cake</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <!-- 2nd day work  -->
+    <section class="special_Burger_offer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="special_burger_item">
+                        <div class="row">
+<!--                            // for loop section -->
+                            {% for product in top_products %}
+                            <div class="col-md-3">
+                                <div class="burger_single_offer">
+                                    <div class="burger_img">
+                                        <img src="{{product.pro_img.url}}" alt="burger 01">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="burger_single_price">
+                                                <h4>${{product.pro_price}}</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div  id="pro_id">
+                                            <h4>{{product.pro_ID}}</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="burger_details">
+                                    <div class="item_name">
+                                        <h2>{{product.pro_name}}</h2>
+                                    </div>
+                                    <div class="item_desc">
+                                        <p>{{product.pro_desc}}</p>
+                                    </div>
+                                    <div class="add_TO_cart">
+                                        <h3>ADD TO CART</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <section class="shop_Product_add" style="background-image: url({% static 'img/sp_burger_back.jpg' %});">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="shop_pro_add_text">
+                        <div class="shop_add_h1">
+                            <h1><span>THE</span><br>
+                                BIGTI<br> BURGER</h1>
+                        </div>
+                        <div class="shop_add_p">
+                            <p>Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula rutrum risus ultrice
+                                luctus ligula congue a</p>
+                        </div>
+                        <div class="shop_add_button">
+                            <button>Add To CART</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="shop_prod_img_add">
+                         <img src="{% static 'img/burger_01.png' %}" alt="Burger No 01.png">
+<!--                        <img src="img/burger_01.png" alt="">-->
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="single_burger_add_setting">
+                            <div class="single_Burger_add">
+                                <div class="single_burger_add_link_img">
+                                     <img src="{% static 'img/burger_02.png' %}" alt="">
+                                </div>
+                                <div class="single_burger_add_link_name">
+                                    <h3>Komil Burger</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="single_Burger_add">
+                                <div class="single_burger_add_link_img">
+                                     <img src="{% static 'img/burger_02.png' %}" alt="single_burger.png">
+                                </div>
+                                <div class="single_burger_add_link_name">
+                                    <h3>Komil Burger</h3>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="explore_our_Menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="our_All_Menu_top_sec">
+                        <div class="our_all_menu_Sec_heading">
+                            <h1>EXPLORE OUR MENU</h1>
+                        </div>
+                        <div class="our_all_Menu_Sec_sub_head">
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-8">
+                                    <p>Aliquam a augue suscipit, luctus neque purus ipsum neque undo dolor primis libero
+                                        tempus,
+                                        blandit a cursus varius magna</p>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="our_all_Menu_Sec_Products">
+                        <div class="row">
+                            {% for our_shop_prod in Seller_products %}
+                            <div class="col-md-3">
+                                <div class="our_All_Menu_single">
+                                    <div class="our_menu_img">
+                                        <img src="{{our_shop_prod.pro_img.url}}" alt="burger-11.jpg">
+                                        <div class="single_pro_code">
+                                            <h4>Code : {{our_shop_prod.pro_ID}}</h4>
+                                        </div>
+                                    </div>
+                                    <div class="our_all_single_Menu_add_details">
+                                    <div class="our_product_rate">
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <div class="five_star_rate">
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="love_rate">
+                                                    <i class="far fa-heart"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="our_Menu_name_single">
+                                        <h2>{{our_shop_prod.pro_name}}</h2>
+                                    </div>
+                                    <div class="our_Menu_details">
+                                        <p>{{our_shop_prod.pro_desc}}</p>
+                                    </div>
+                                    <div class="price_cart">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="price_button">
+                                                    <h4>${{our_shop_prod.pro_price}}</h4>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <div class="price_add_cart">
+                                                    <button>
+                                                        <h4><i class="fas fa-shopping-bag"></i>Add to cart</h4>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="what_else_sec" style="background-image: url({% static 'img/what_else_back.jpg' %});">
+        <div class="container">
+            <div class="row">
+                <div class="container">
+                    <div class="what_else_section_wrap">
+                        <div class="col-md-12">
+                            <div class="what_else_section_top">
+                                <h1>BURGERS…
+                                    <span>WHAT ELSE?</span></h1>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                             <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-8">
+                                    <div class="what_else_section_moddle">
+                                        <p>
+                                            Porta semper lacus cursus, feugiat primis ultrice a ligula risus auctor an
+                                            tempus
+                                            feugiat dolor lacinia cubilia curae integer orci congue and metus
+                                            mollislorem primis
+                                            in integer metus curae integer orci congue integer and primis in integer
+                                            metus
+                                            mollis faucibus</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="what_else_section_bottom">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="else_prod">
+                                            <div class="else_icon">
+                                                <img src="{% static 'img/burger.png' %}" alt="cake">
+                                            </div>
+                                            <div class="else_text">
+                                                <h4>BURGERS</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="else_prod">
+                                            <div class="else_icon">
+                                                <img src="{% static 'img/chicken-leg.png' %} " alt=" cake">
+                                            </div>
+                                            <div class="else_text">
+                                                <h4>BURGERS</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="else_prod">
+                                            <div class="else_icon">
+                                                <img src="{% static 'img/salad.png' %}" alt="cake">
+                                            </div>
+                                            <div class="else_text">
+                                                <h4>BURGERS</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="else_prod">
+                                            <div class="else_icon">
+                                                <img src="{% static 'img/french-fries.png' %}" alt="cake">
+                                            </div>
+                                            <div class="else_text">
+                                                <h4>BURGERS</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="else_prod">
+                                            <div class="else_icon">
+                                                <img src="{% static 'img/burger.png' %}" alt="cake">
+                                            </div>
+                                            <div class="else_text">
+                                                <h4>BURGERS</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="else_prod">
+                                            <div class="else_icon">
+                                                <img src="{% static 'img/salad.png' %}" alt="cake">
+                                            </div>
+                                            <div class="else_text">
+                                                <h4>BURGERS</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="else_button">
+                                            <h4><a href="#">Explore Full Menu</a></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="price_off_And_rings">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="price_off">
+                        <div class="product_price_img">
+                            <img src="{% static 'img/smokey_burger-06.png' %}" alt="">
+                            <div class="price_Img">
+                                <img src="{% static 'img/discount-badge-red.png' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="product_price_header">
+                            <h2>SMOKEY HOUSE BURGER</h2>
+                        </div>
+                        <div class="product_price_desc">
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-8">
+                                    <p>Beef patty, cheddar cheese, onion, lettuce, tomatoes, pickles</p>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="onion_box">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="onion_single_box">
+                                    <div class="onion_top_box">
+                                        <div class="onion_img">
+                                            <img src="{% static 'img/onion_side-01-1.png' %}" alt="onion">
+                                            <div class="love_rate">
+                                                <i class="far fa-heart"></i>
+                                            </div>
+                                        </div>
+                                        <div class="onion_price_rating">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="price_button">
+                                                        <h4>$77</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                   <div class="five_star_rate">
+                                                       <i class="far fa-star"></i>
+                                                       <i class="far fa-star"></i>
+                                                       <i class="far fa-star"></i>
+                                                       <i class="far fa-star"></i>
+                                                       <i class="far fa-star"></i>
+                                                   </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="onion_box_desc">
+                                        <div class="onion_header">
+                                            <h2>ONION RINGS</h2>
+                                        </div>
+                                        <div class="onion_box_para">
+                                            <p>Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula</p>
+                                        </div>
+                                        <div class="onion_add_cart">
+                                            <div class="price_add_cart">
+                                                <button>
+                                                    <h4><i class="fas fa-shopping-bag"></i>Add to cart</h4>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="col-md-6">
+                                 <div class="onion_single_box">
+                                     <div class="onion_top_box">
+                                         <div class="onion_img">
+                                             <img src="{% static 'img/onion_side-01-1.png' %}" alt="onion">
+                                             <div class="love_rate">
+                                                 <i class="far fa-heart"></i>
+                                             </div>
+                                         </div>
+                                         <div class="onion_price_rating">
+                                             <div class="row">
+                                                 <div class="col-md-6">
+                                                     <div class="price_button">
+                                                         <h4>$77</h4>
+                                                     </div>
+                                                 </div>
+                                                 <div class="col-md-6">
+                                                     <div class="five_star_rate">
+                                                         <i class="far fa-star"></i>
+                                                         <i class="far fa-star"></i>
+                                                         <i class="far fa-star"></i>
+                                                         <i class="far fa-star"></i>
+                                                         <i class="far fa-star"></i>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                     <div class="onion_box_desc">
+                                         <div class="onion_header">
+                                             <h2>ONION RINGS</h2>
+                                         </div>
+                                         <div class="onion_box_para">
+                                             <p>Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula</p>
+                                         </div>
+                                         <div class="onion_add_cart">
+                                             <div class="price_add_cart">
+                                                 <button>
+                                                     <h4><i class="fas fa-shopping-bag"></i>Add to cart</h4>
+                                                 </button>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="special_Food">
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="special_Food_single_box">
+                            <img src="{% static 'img/offer-1.jpg' %}" alt="offer.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="special_Food_single_box">
+                            <img src="{% static 'img/offer-2.jpg' %}" alt="offer.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section class="classic_Burger">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="class_product_single_box">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="pro_img">
+                                    <img src="{% static 'img/burger-11.jpg' %}" alt="Burger.jpg">
+                                    <div class="single_pro_code pro_is_box">
+                                        <h4>CODE : BU 00</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="pro_name">
+                                    <h2>PANISH BURGER</h2>
+                                </div>
+                                <div class="pro_desc">
+                                    <p>Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula</p>
+                                </div>
+                                <div class="pro_price">
+                                    <h4>$8.95</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="class_product_single_box">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="pro_img">
+                                    <img src="{% static 'img/burger-12.jpg' %}" alt="Burger.jpg">
+                                    <div class="single_pro_code pro_is_box">
+                                        <h4>CODE : BU 00</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="pro_name">
+                                    <h2>PANISH BURGER</h2>
+                                </div>
+                                <div class="pro_desc">
+                                    <p>Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula</p>
+                                </div>
+                                <div class="pro_price">
+                                    <h4>$8.95</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="class_product_single_box">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="pro_img">
+                                    <img src="{% static 'img/burger-14.jpg' %}" alt="Burger.jpg">
+                                    <div class="single_pro_code pro_is_box">
+                                        <h4>CODE : BU 00</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="pro_name">
+                                    <h2>PANISH BURGER</h2>
+                                </div>
+                                <div class="pro_desc">
+                                    <p>Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula</p>
+                                </div>
+                                <div class="pro_price">
+                                    <h4>$8.95</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="products_price_save_up">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="download_mobile_app_save">
+                        <div class="app_header">
+                            <h2><span>DOWNLOAD MOBILE APP AND</span><br>
+                                SAVE UP TO 20%</h2>
+                        </div>
+                        <div class="app_desc">
+                            <p>Aliquam a augue suscipit, luctus neque purus ipsum and neque dolor primis libero tempus,
+                                blandit varius</p>
+                        </div>
+                        <div class="google_And_apple">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="app_img">
+                                        <img src="{% static 'img/appstore.png' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="app_img">
+                                        <img src="{% static 'img/googleplay.png' %}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="store_e_shop_app_Img">
+                        <img src="{% static 'img/e-shop.png' %}" alt="e_shop">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="nothing_brings">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="nothing_brings_Img">
+                        <img src="{% static 'img/about-01-img.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                <div class="nothing_bring_Descri">
+                    <div class="nothing_bring_header">
+                        <h2>
+                            NOTHING BRINGS<br> PEOPLE TOGETHER LIKE A <br>GOOD BURGER</h2>
+                    </div>
+                    <div class="noting_bring_paragrap">
+                        <p id="noting_PARA_01">Porta semper lacus cursus, feugiat primis ultrice a ligula risus auctor an tempus feugiat
+                            dolor lacinia cubilia curae at integer orci congue and metus in mollislorem primis gravida
+                        </p>
+                        <p id="noting_PARA_02"><i class="fa fa-circle" aria-hidden="true"></i><span></span>Fringilla risus, luctus mauris orci auctor purus euismod
+                            pretium purus pretium ligula rutrum
+                            tempor sapien</p>
+
+                        <p id="noting_PARA_03"><i class="fa fa-circle" aria-hidden="true"></i><span></span>Fringilla risus, luctus mauris orci auctor purus euismod</p>
+
+                        <p id="noting_PARA_04"><i class="fa fa-circle" aria-hidden="true"></i><span></span>Fringilla risus, luctus mauris orci auctor purus euismod
+                                pretium purus pretium ligula rutrum
+                                tempor sapien</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <section class="carousel_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="owl-carousel our_reci_show">
+                        <div class="our_single_reci_show">
+                            <img src="{% static 'img/c1.png' %}" alt="">
+                        </div>
+                        <div class="our_single_reci_show">
+                            <img src="{% static 'img/c2.png' %}" alt="">
+                        </div>
+                        <div class="our_single_reci_show">
+                            <img src="{% static 'img/c3.png' %}" alt="">
+                        </div>
+                        <div class="our_single_reci_show">
+                            <img src="{% static 'img/c4.png' %}" alt="">
+                        </div>
+                        <div class="our_single_reci_show">
+                            <img src="{% static 'img/c5.png' %}" alt="">
+                        </div>
+                        <div class="our_single_reci_show">
+                            <img src="{% static 'img/c6.png' %}" alt="">
+                        </div>
+                        <div class="our_single_reci_show">
+                            <img src="{% static 'img/c7.png' %}" alt="">
+                        </div>
+                        <div class="our_single_reci_show">
+                            <img src="{% static 'img/c8.png' %}" alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="client_event">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="event_head">
+                        <div class="event_header">
+                            <h2>EVENTS & CATERING</h2>
+                        </div>
+                        <div class="event_para">
+                            <div class="row">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6">
+                                    <p>Aliquam a augue suscipit, luctus neque purus ipsum
+                                      neque undo dolor primis libero tempus,
+                                      blandit a cursus varius magna</p>
+                                </div>
+                                <div class="col-md-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="event_catering">
+                        <div class="row">
+                            {% for event in event_show %}
+                            <div class="col-md-4">
+                                <div class="event_cate_single">
+                                    <div class="event_cate_single_img">
+                                        <img src="{{ event.Ev_Img.url }}" alt="event_1">
+                                        <div class="event_date">
+                                            <h4>{{ event.Ev_Date }}</h4>
+                                        </div>
+                                    </div>
+                                    <div class="event_cate_single_head">
+                                        <h2>{{ event.Ev_name}}</h2>
+                                    </div>
+                                    <div class="event_cate_single_desc">
+                                        <p>{{ event.Ev_desc}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<section class="our_All_administrator" style="background-image: url({% static 'img/reviews.jpg' %});">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="our_admin_carousel owl-theme our_reci_show">
+                        <div class="our_admin_single_carousel">
+                            <div class="admin_Img">
+                                <div class="row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">
+                                        <img src="{% static 'img/Formal pic.jpg' %}" alt=""></div>
+                                    <div class="col-md-4"></div>
+                                </div>
+
+                            </div>
+                            <div class="admin_desc">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-8">
+                                        <h4>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro saepe magnam
+                                            placeat, fugiat harum incidunt quaerat nemo nihil quas dolorem fuga culpa
+                                            eaque voluptas atque similique molestias nam? Sed, deserunt?"</h4>
+                                    </div>
+                                    <div class="col-md-2"></div>
+                                </div>
+
+                            </div>
+                            <div class="admin_star">
+                                <div class="row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">
+                                        <div class="five_star_rate">
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4"></div>
+                                </div>
+                            </div>
+                            <div class="admin_name">
+                                <div class="row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">
+                                        <h4>Pappu DEy</h4>
+                                    </div>
+                                    <div class="col-md-4"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="our_admin_single_carousel">
+                            <div class="admin_Img">
+                                <div class="row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">
+                                        <img src="{% static 'img/review-author-2.jpg' %}" alt=""></div>
+                                    <div class="col-md-4"></div>
+                                </div>
+
+                            </div>
+                            <div class="admin_desc">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-8">
+                                        <h4>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro saepe magnam
+                                            placeat, fugiat harum incidunt quaerat nemo nihil quas dolorem fuga culpa
+                                            eaque voluptas atque similique molestias nam? Sed, deserunt?"</h4>
+                                    </div>
+                                    <div class="col-md-2"></div>
+                                </div>
+
+                            </div>
+                            <div class="admin_star">
+                                <div class="row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">
+                                        <div class="five_star_rate">
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4"></div>
+                                </div>
+                            </div>
+                            <div class="admin_name">
+                                <div class="row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">
+                                        <h4>AUSKO LOndo</h4>
+                                    </div>
+                                    <div class="col-md-4"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="our_admin_single_carousel">
+                            <div class="admin_Img">
+                                <div class="row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">
+                                        <img src="{% static 'img/review-author-3.jpg' %}" alt=""></div>
+                                    <div class="col-md-4"></div>
+                                </div>
+
+                            </div>
+                            <div class="admin_desc">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-8">
+                                        <h4>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro saepe magnam
+                                            placeat, fugiat harum incidunt quaerat nemo nihil quas dolorem fuga culpa
+                                            eaque voluptas atque similique molestias nam? Sed, deserunt?"</h4>
+                                    </div>
+                                    <div class="col-md-2"></div>
+                                </div>
+
+                            </div>
+                            <div class="admin_star">
+                                <div class="row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">
+                                        <div class="five_star_rate">
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4"></div>
+                                </div>
+                            </div>
+                            <div class="admin_name">
+                                <div class="row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">
+                                        <h4>AUSKO LOndo</h4>
+                                    </div>
+                                    <div class="col-md-4"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="sp_food">
+        <div class="container">
+            <div class="row">
+                 {% for our_shop_prod in Seller_products %}
+                <div class="col-md-3">
+                    <div class="single_sp_FOOD">
+                        <div class="single_FOOD_IMG">
+                            <img src="{{our_shop_prod.pro_img.url}}" alt="">
+                            <div class="overlay">
+                            </div>
+                            <div class="food_TEXT">
+                                <h2>{{our_shop_prod.pro_name}}</h2>
+                                <div class="five_star_rate">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+<section class="fast_delivary" style="background-image: url({% static 'img/banner-4.jpg' %});">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="delivary_and_contact">
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <div class="delivary_header">
+                                    <h2>WE GUARANTEE</h2>
+                                </div>
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <div class="delivary_middle">
+                                    <h2>30 MINUTES DELIVERY!</h2>
+                                </div>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <div class="delivary_desc">
+                                    <p>Aliquam a augue suscipit, luctus neque purus ipsum neque undo dolor primis libero
+                                        tempus, blandit a cursus varius luctus neque magna</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <div class="contact_number">
+                                    <h3>Call: 02494 9494 4994</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="container">
+            <div class="footer_sec_details">
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="footer_shop_logo">
+                            <img src="{% static 'img/logo.png' %}" alt="shop Logo">
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="footer_social_link">
+                            <i class="fab fa-facebook-f"></i>
+                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-youtube"></i>
+                            <i class="fab fa-telegram-plane"></i>
+                            <i class="fab fa-pinterest-p"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="footer_copyRight">
+                            <p>2021 © Copyright, Testo . All rights reserved.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="https://kit.fontawesome.com/b1a7f8a11f.js" crossorigin="anonymous"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>

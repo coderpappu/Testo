@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shoper Registrations</title>
+</head>
+<body>
+    <form action="shopperRegis" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="user_name" placeholder="Your Name"><br>
+        <input type="text" name="shop_name" placeholder="Shop Name"><br>
+        <input type="email" name="user_mail" placeholder="Mail"><br>
+        <input type="number" name="user_mobile" placeholder="Your Mobile Number"><br>
+        <input type="text" name="user_address" placeholder="user_address"><br>
+        <input type="date" name="user_B_date" placeholder=" your Birth Date"><br>
+        <input type="text" name="user_MBank" placeholder="Mobile Bank Name"><br>
+        <input type="file" name="user_img" ><br>
+        <input type="password" name="password1" placeholder="Password"><br>
+        <input type="password" name="password2" placeholder="Confirm Password"><br>
+        <input type="submit" name="save">
+    </form>
+</body>
+</html>

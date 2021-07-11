@@ -1,0 +1,173 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+<div class="admin_panel">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="all_data_show_and_pass">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="top_shopper_prodocts_show" id="click">
+                                <div class="top_product_header">
+                                    <h1>Top Shopper Products</h1>
+                                </div>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Product ID</th>
+                                            <th scope="col">Serial NO</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Shop</th>
+                                            <th scope="col">DELETE</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- //for loop sections  -->
+                                        {% for top_prods in top_pro_show %}
+
+                                        <tr class=" mb=10 ">
+                                            <th>{{top_prods.pro_ID}}</th>
+                                            <td>{{top_prods.id}}</td>
+                                            <td>{{top_prods.pro_name}}</td>
+                                            <td>{{top_prods.pro_shopName}}</td>
+                                            <td id="tpdelete"><a href="/shopAdmin/deleteTop/{{top_prods.id}}">Delete</a>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="shopper_prodocts_show">
+                                <div class="product_header">
+                                    <h1>Our All Stock Products</h1>
+                                </div>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Product ID</th>
+                                            <th scope="col">Serial NO</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Shop</th>
+                                            <th scope="col">Top Products</th>
+                                            <th scope="col">EDIT</th>
+                                            <th scope="col">DELETE</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- //for loop sections  -->
+                                        {% for prods in showProducts %}
+
+                                        <tr class=" mb=10 ">
+                                            <th>{{prods.pro_ID}}</th>
+                                            <td>{{prods.id}}</td>
+                                            <td>{{prods.pro_name}}</td>
+                                            <td>{{prods.pro_shopName}}</td>
+                                            <td id="edit"><a href="/shopAdmin/topProducts/{{prods.id}}">Top Product</a>
+                                            </td>
+                                            <td id="edit"><a href="/shopAdmin/update/{{prods.id}}">EDIT</a></td>
+                                            <td id="delete"><a href="/shopAdmin/delete/{{prods.id}}">Delete</a></td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="event_pub">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="Event_Publish">
+                    <div class="Event_header">
+                        <h2>ADD More Event</h2>
+                    </div>
+                    <div class="Event_button">
+                        <a href="shopEvent">Event</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="top_shopper_prodocts_show" id="click">
+                    <div class="top_product_header">
+                        <h1>All Events Details </h1>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Event ID</th>
+                                <th scope="col">Event Name </th>
+                                <th scope="col">Event Date </th>
+                                <th scope="col">DELETE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- //for loop sections  -->
+                            {% for EV_d in event %}
+                            <tr class=" mb=10 ">
+                                <td>{{EV_d.id}}</td>
+                                <th>{{EV_d.Ev_name}}</th>
+                                <td>{{EV_d.Ev_Date}}</td>
+                                <td id="tpdelete"><a href="/shopAdmin/shopEventDelet/{{EV_d.id}}">Delete</a></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="shopper_profile">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="shopper_profile_show">
+                    <div class="dealer_deatils">
+                        <h2>our AlL dealer </h2>
+                    </div>
+                    <div class="row">
+                        {% for all_seller in our_all_seller %}
+                        <div class="col-md-3">
+                            <!--                                for loop -->
+
+                            <div class="single_shopper_profile_show">
+                                <div class="shopper_img">
+                                    <img src="{{all_seller.user_img.url}}" alt="">
+                                </div>
+                                <div class="shopper_man_details">
+                                    <div class="shopper_name">
+                                        <h2>{{all_seller.user_name}}</h2>
+                                    </div>
+                                    <div class="shopper_shop_name">
+                                        <h2>{{all_seller.shop_name}}</h2>
+                                    </div>
+                                    <div class="shopper_email">
+                                        <h2>{{all_seller.user_mail}}</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

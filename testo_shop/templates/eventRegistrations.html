@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Registrations </title>
+</head>
+<body>
+  <form action="shopEvent" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" name="e_name" placeholder="Event Name"/><br>
+    <input type="text" name="e_desc" placeholder="Event Desc"/><br>
+    <input type="date" name="e_date" placeholder="Event Date"/><br>
+    <input type="file" name="e_img" placeholder="Your Name "/><br>
+    <input type="submit" value="save"/><br>
+  </form>
+</body>
+</html>
