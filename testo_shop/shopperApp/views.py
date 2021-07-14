@@ -47,6 +47,8 @@ def login(request):
         user_email = request.POST['user_email']
         password = request.POST['password']
         user = auth.authenticate(username=username,email= user_email,password=password,)
+
+
         if user is not None:
             auth.login(request, user)
             return redirect('/')
@@ -63,3 +65,5 @@ def logout(request):
 
 
 
+def userAndSeller(request):
+    return  render(request, "verify.html")
