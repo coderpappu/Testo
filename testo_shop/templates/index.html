@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top navBarSetting">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top navBarSetting" >
         <div class="container-fluid">
             <a class=" ml-10 navbar-brand" href="#"><img src="{% static 'img/logo.png' %}" width="90px" height="50px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -57,18 +57,38 @@
                     {% endif %}
                     {% else %}
                    <li class="nav-item">
-                       <a class="nav-link active" id="mynavBar" aria-current="page" href="#">SignUp</a>
+                       <a class="nav-link active" id="mynavBar" aria-current="page" href="shopperApp/userORseller">SignUp</a>
                    </li>
                    <li class="nav-item">
                        <a class="nav-link active" id="mynavBar" aria-current="page" href="shopperApp/login">Login</a>
                    </li>
                     {% endif %}
+                    <li class="nav-item">
+                        <div class="user_data">
+
+                            <div class="user_img">
+                                <img src="{% static 'img/profile.png' %}" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    {% if user.is_authenticated %}
+                     
+                     <li class="nav-item">
+                         <div class="user_NAME">
+                             <h5>{{user.username}}</h5>
+                         </div>
+                     </li>
+                     {% else %}
+                        <div class="user_NAME">
+                        <h5>login</h5>
+                        </div>
+                     {% endif %}
 
                 </ul>
-                <form class="d-flex">
+                <!-- <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn bg-warning" type="submit">Search</button>
-                </form>
+                </form> -->
             </div>
         </div>
     </nav>

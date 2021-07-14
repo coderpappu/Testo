@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
 /* img{
     width: 100%;
     height: auto;
@@ -9,9 +10,11 @@
     margin-left: 100px !important;
 
 }
+
 ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
     margin-left: 200px;
 }
+
 a#mynavBar {
     color: rgb(7, 7, 7);
     font-size: 14px;
@@ -19,19 +22,22 @@ a#mynavBar {
     margin-right: 23px;
     font-weight: 700;
 }
+
 .hero_burger {
     height: 715px;
     margin-top: 70px;
 }
+
 .hero_text {
     text-align: center;
     padding-top: 95px;
     padding-bottom: 20px;
 }
-.hero_text h2{
+
+.hero_text h2 {
     color: #E3000E;
     font-family: "Lilita One",
-    Sans-serif;
+        Sans-serif;
     font-size: 116px;
     font-weight: 500;
     text-transform: uppercase;
@@ -39,6 +45,7 @@ a#mynavBar {
     letter-spacing: 3px;
     text-shadow: 3px 3px 0px #FFFFFF;
 }
+
 .herp_burger_img {
     align-items: center;
     text-align: center;
@@ -56,6 +63,7 @@ img#iconImg {
     margin-top: 175px;
     text-align: center;
 }
+
 .our_product_show h3 {
     font-size: 20px;
     text-transform: uppercase;
@@ -63,6 +71,7 @@ img#iconImg {
     margin-top: 18px;
     letter-spacing: 2px;
 }
+
 .our_product_show {
     padding-bottom: 50px;
 }
@@ -94,6 +103,7 @@ img#iconImg {
     margin-top: 4px;
     color: #ffda03;
 }
+
 .burger_img {
     margin-bottom: 20px;
 }
@@ -103,6 +113,7 @@ img#iconImg {
     padding: 10px;
     margin-bottom: 70px;
 }
+
 .item_name h2 {
     font-size: 20px;
     font-weight: 700;
@@ -110,15 +121,18 @@ img#iconImg {
     letter-spacing: 1px;
     color: #733d00;
 }
+
 .burger_details .item_desc p {
     font-size: 16px;
     color: #7b7575;
 }
+
 .add_TO_cart {
     padding: 4px;
     border-radius: 5px;
     border: 1px solid #ddd;
 }
+
 .add_TO_cart h3 {
     font-size: 20px;
     text-transform: uppercase;
@@ -126,16 +140,19 @@ img#iconImg {
     margin-top: 7px;
     font-weight: 700;
 }
+
 #pro_id {
     padding: 7px;
     background: #ffbc00;
     text-align: center;
     border-radius: 6px;
 }
+
 div#pro_id h4 {
     font-size: 19px;
     margin-top: 2px;
 }
+
 /* Admin Panel Css */
 
 .admin_panel {
@@ -170,6 +187,7 @@ td#delete a {
     font-weight: 700;
     text-transform: uppercase;
 }
+
 .product_header {
     padding: 10px;
     background: #3c3a3a;
@@ -185,6 +203,7 @@ td#delete a {
     font-size: 25px;
     letter-spacing: 5px;
 }
+
 .top_product_header h1 {
     padding: 15px 12px;
     background: red;
@@ -199,6 +218,7 @@ div#click {
     background: #ddd;
     margin-top: 21px;
 }
+
 td#tpdelete {
     padding: 18px 10px;
     background: red;
@@ -230,9 +250,16 @@ td#tpdelete a {
     margin: 15px;
 }
 
-.shopper_img img {border-radius: 7px;transition: 1s;}
+.shopper_img img {
+    border-radius: 7px;
+    transition: 1s;
+}
 
-.shopper_img img:hover {margin-top: 10px;transform: scale(1.1);padding: 12px;}
+.shopper_img img:hover {
+    margin-top: 10px;
+    transform: scale(1.1);
+    padding: 12px;
+}
 
 .shopper_name h2 {
     text-align: center;
@@ -256,12 +283,14 @@ td#tpdelete a {
     font-size: 15px;
     color: #9a8787;
 }
+
 .shopper_man_details {
     background: #752644;
     padding: 16px;
     border-radius: 1px;
     /* box-shadow: 1px 1px 2px #000; */
 }
+
 .dealer_deatils h2 {
     text-align: center;
     text-transform: uppercase;
@@ -311,9 +340,11 @@ section.shop_Product_add img {
     box-shadow: 1px -4px 16px #ffffff8f,
         1px 4px 17px #ffffff8c;
 }
+
 .shop_pro_add_text {
     margin-bottom: 80px;
 }
+
 .shop_add_h1 h1 span {
     font-size: 50px;
 }
@@ -413,19 +444,22 @@ section.shop_Product_add img {
     font-size: 14px;
     margin-bottom: 0;
     font-weight: 700;
-    transition:1s;
-    color:#383838;
+    transition: 1s;
+    color: #383838;
 }
-.onion_box_desc .price_add_cart button:hover{
+
+.onion_box_desc .price_add_cart button:hover {
     background: #ffd400;
 }
 
 .price_add_cart button h4 i {
     margin-right: 7px;
 }
+
 .price_add_cart {
     margin-bottom: 10px;
 }
+
 .our_menu_img img {
     border-radius: 4px;
 }
@@ -452,6 +486,7 @@ section.shop_Product_add img {
     z-index: 1;
     overflow: hidden;
 }
+
 .our_menu_img img {
     transform: scale(1);
     transition: 1s;
@@ -460,6 +495,7 @@ section.shop_Product_add img {
 .our_menu_img img:hover {
     transform: scale(1.1);
 }
+
 .single_pro_code {
     position: absolute;
     padding: 11px 10px;
@@ -487,6 +523,7 @@ section.shop_Product_add img {
 .what_else_section_wrap {
     margin: 125px 0px;
 }
+
 .what_else_section_top {
     text-align: center;
     margin: 57px 0px;
@@ -529,9 +566,11 @@ section.shop_Product_add img {
     text-align: center;
     margin-top: 25px;
 }
+
 .else_text h4 {
     color: #acacac;
 }
+
 .else_button {
     text-align: center;
     margin: 75px 0px 0px 0px;
@@ -540,7 +579,7 @@ section.shop_Product_add img {
 
 .else_button h4 a {
     padding: 10px 17px;
-    background:rgb(199, 0, 0);
+    background: rgb(199, 0, 0);
     font-weight: 700;
     text-decoration: none;
     font-size: 20px;
@@ -549,7 +588,8 @@ section.shop_Product_add img {
     text-transform: uppercase;
     transition: 0.5s;
 }
-.else_button h4 a:hover{
+
+.else_button h4 a:hover {
     color: #960000dd;
     background: rgb(233, 233, 233);
     border: 1px solid #b70000;
@@ -616,6 +656,7 @@ section.shop_Product_add img {
     width: 250px;
     height: 230px;
 }
+
 .onion_single_box {
     margin: 143px 0px 43px 0px;
 }
@@ -718,6 +759,7 @@ section.shop_Product_add img {
     color: red;
     font-family: 'Oswald';
 }
+
 .class_product_single_box .single_pro_code.pro_is_box {
     padding: 5px 5px;
     background: #fdcc00;
@@ -726,6 +768,7 @@ section.shop_Product_add img {
 .class_product_single_box .single_pro_code.pro_is_box h4 {
     font-size: 13px;
 }
+
 section.classic_Burger {
     margin: 87px 0px 0px;
 }
@@ -860,9 +903,11 @@ section.products_price_save_up {
 p#noting_PARA_01 {
     margin-top: 44px;
 }
+
 .our_reci_show .our_single_reci_show img {
     width: 153px !important;
 }
+
 section.carousel_section {
     background: #e7e7e7;
     padding: 22px;
@@ -893,6 +938,7 @@ section.carousel_section {
     height: 269px;
     transition: 1s;
 }
+
 .event_cate_single_head h2 {
     font-size: 30px;
     margin: 30px 0px 15px 12px;
@@ -905,6 +951,7 @@ section.carousel_section {
     margin: 3px 12px;
     color: #7e7e7e;
 }
+
 .event_cate_single_img {
     overflow: hidden;
     position: relative;
@@ -915,6 +962,7 @@ section.carousel_section {
     transform: scale(1.5);
 
 }
+
 .event_date {
     position: absolute;
     top: 6%;
@@ -931,6 +979,7 @@ section.carousel_section {
     text-align: center;
     margin-top: 3px;
 }
+
 .event_cate_single {
     margin: 0px 0px 50px 0px;
 }
@@ -949,6 +998,7 @@ section.carousel_section {
     font-family: 'Oswald';
     text-transform: uppercase;
 }
+
 .Event_button {
     padding: 10px 10px;
 }
@@ -1031,19 +1081,22 @@ section.our_All_administrator {
     font-family: 'Oswald';
     text-transform: uppercase;
 }
+
 .admin_star {
     text-align: center;
     margin: 10px;
     font-size: 20px;
 }
+
 .admin_star .five_star_rate i {
     color: #ffc800;
 }
-nav bar dots
-.owl-theme .owl-dots .owl-dot.active span{
+
+nav bar dots .owl-theme .owl-dots .owl-dot.active span {
     background: #fff !important;
     border: 1px solid #dddd;
 }
+
 .owl-dots span {
     background: none !important;
     border: 1px solid #dddd;
@@ -1074,9 +1127,11 @@ section.sp_food {
     height: 230px;
     transition: 1s;
 }
+
 .single_FOOD_IMG img:hover {
     transform: scale(1.2);
 }
+
 .overlay {
     position: absolute;
     z-index: 222;
@@ -1121,6 +1176,7 @@ section.sp_food {
     color: #ffd400;
     font-size: 15px;
 }
+
 .single_sp_FOOD {
     margin: 0px 0px 30px 0px;
 }
@@ -1260,11 +1316,122 @@ section.seller_Product_POST {
     color: #2f251b;
     text-shadow: 0px -1px 4px #797775;
 }
+
 .form_control label {
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 600;
 }
+
 .form_control #subMan {
     margin: 17px 318px;
+}
+
+
+/*user and seller different Link*/
+
+section.userAndSeller {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.registration_docs img {
+    width: 100%;
+    height: 364px;
+    border-radius: 8px;
+}
+
+/* .registration_docs {
+    margin: 209px 0px;
+} */
+
+
+#nav_margin_con {
+    margin: 73px 0px 0px 0px !important;
+}
+
+.registration__link {
+    margin: 82px 0px;
+    height: 200px;
+    background: whitesmoke;
+    padding: 29px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 15px #edecec, -5px -3px 15px #f1f1f1;
+}
+
+.regis_user_IMG img {
+    width: 100px;
+    text-align: center;
+}
+
+.regis_user_IMG {
+    text-align: center;
+}
+
+.regis_man {
+    margin: 16px 16px;
+}
+
+.regis_man h3 {
+    font-size: 15px;
+    font-family: inherit;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.user_terms {
+    overflow: overlay;
+    width: 100%;
+    height: 89px;
+    margin-bottom: 25px;
+}
+
+.user_terms p {
+    font-size: 15px;
+    font-family: initial;
+}
+
+.user_terms h4 {
+    font-size: 13px;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: #dd3600;
+}
+
+.regis_user_details a {
+    text-decoration: none;
+    padding: 9px 15px;
+    background: #ff7f00;
+    border-radius: 5px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 6px;
+}
+div#margin {
+    margin-top: -15px;
+}   
+div#margin a {
+    background: #ff3a00;
+}
+
+
+.user_img img {
+    width: 40px;
+    height: auto;
+}
+
+.user_NAME h5 {
+    margin: 12px 2px;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #ce0000;
+}
+
+
+.user_NAME {
+    margin: 0px 13px;
+}
+.user_data {
+    margin-left: 116px;
 }
