@@ -31,15 +31,14 @@ def shopperRegistrations(request):
         password2 = request.POST['password2']
         if password1 == password2:
             reg_Data = User.objects.create_user(username=user_name, first_name = shop_name,email=user_mail, password=password1)
-            reg_Data.save()
             final_reg_data = ShopperRegistration(user_name = user_name, shop_name = shop_name, user_mail = user_mail , user_mobile = user_mobile, user_address = user_address, user_B_date = user_B_date, user_MBank =user_MBank , user_img =user_img)
             final_reg_data.save()
-            return HttpResponse("SAve Data")
+            reg_Data.save()
+            return render(request, "login.html")
         else:
             return HttpResponse('Password Bul')
     else:
-        pass
-    return render(request, "shopper_regis.html")
+        return render(request, "shopper_regis.html")
 
 def login(request):
     if request.method == 'POST':

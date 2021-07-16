@@ -15,60 +15,61 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
-                <div class="form_control" id="rgis_Man" > 
-                    <form action="shopperRegis" method="post" enctype="multipart/form-data">
+                <div class="form_control" id="rgis_Man" >
+                    <form action="shopperRegis"  method="post" enctype="multipart/form-data" >
                         {% csrf_token %}
                         <div class="mb-3">
                             <label for="user_name" class="form-label">Your Name</label>
-                            <input type="text" name="user_name" class="form-control" id="user_name"
-                                placeholder="Enter Your Name">
+                            <input type="text" name="user_name "  class="form-control" id="user_name"
+                                placeholder="Enter Your Name" required>
                         </div>
                        <div class="mb-3">
                            <label for="shop_name" class="form-label">Your Shop Name</label>
                            <input type="text" name="shop_name" class="form-control" id="shop_name"
-                               placeholder="Enter Your Shop Name">
+                               placeholder="Enter Your Shop Name" required >
+
                        </div>
                        <div class="mb-3">
                            <label for="user_mail" class="form-label">Mail Address</label>
                            <input type="email" name="user_mail" class="form-control" id="user_mail"
-                               placeholder="Enter Mail Address">
+                               placeholder="Enter Mail Address" required>
                        </div>
                        <div class="mb-3">
                            <label for="user_mobile" class="form-label">Mobile</label>
                            <input type="number" name="user_mobile" class="form-control" id="user_mobile"
-                               placeholder="Enter Your Mobile Number">
+                               placeholder="Demo: +8801884815990" required>
                        </div>
                        <div class="mb-3">
                            <label for="user_address" class="form-label">Address</label>
                            <input type="text" name="user_address" class="form-control" id="user_address"
-                               placeholder="Enter Your Address">
+                               placeholder="Enter Your Address" required>
                        </div>
                        <div class="mb-3">
                            <label for="user_B_date" class="form-label">Birth Date</label>
                            <input type="date" name="user_B_date" class="form-control" id="user_B_date"
-                               placeholder="Enter Your Birth Date">
+                               placeholder="Enter Your Birth Date" required>
                        </div>
                        <div class="mb-3">
                            <label for="user_MBank" class="form-label">Mobile Banking</label>
                            <input type="text" name="user_MBank" class="form-control" id="user_MBank"
-                               placeholder="Enter Your Mobile Banking">
+                               placeholder="Enter Your Mobile Banking" required>
                        </div>
                        <div class="mb-3">
                            <label for="user_img" class="form-label">Your Image</label>
                            <input type="file" name="user_img" class="form-control" id="user_img"
-                               placeholder="Upload your Image">
+                               placeholder="Upload your Image" required>
                        </div>
                        <div class="mb-3">
                            <label for="password1" class="form-label">Password</label>
                            <input type="password" name="password1" class="form-control" id="password1"
-                               placeholder="Enter Your Password">
+                               placeholder="Enter Your Password" required>
                        </div>
                        <div class="mb-3">
                            <label for="password2" class="form-label">Confirm Password</label>
                            <input type="password" name="password2" class="form-control" id="password2"
-                               placeholder="Confirm Password ">
+                               placeholder="Confirm Password " required>
                        </div>
-                      
+
                         <div class="mb-3">
                             <div class="sub_BTN">
                             <button type="submit" id="subMan" class="btn btn-secondary btn-lg">Submit</button>
@@ -76,6 +77,10 @@
                         </div>
 
                     </form>
+
+
+
+
                 </div>
             </div>
         </div>
