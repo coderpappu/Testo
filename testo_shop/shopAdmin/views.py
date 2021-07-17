@@ -47,7 +47,7 @@ def topProduct(request,id):
         pro_sub = topProducts(pro_name=pro_name, pro_desc=pro_desc, pro_price=pro_price, pro_img=pro_img,
                                  pro_ID=pro_Id, pro_shopName=shop_name)
 
-
+      
         pro_sub.save()
         return redirect('/')
     return render(request, "update.html", {"product_Update": get_Pro_Details})

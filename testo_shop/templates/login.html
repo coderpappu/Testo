@@ -1,20 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-</head>
-<body>
-    <form action="login" method='post'>
-        {% csrf_token %}
-        <input type="text" name="username" placeholder="user Name">
-        <input type="email" name="user_email" placeholder="User email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit">
-    </form>
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+<section class="seller_Product_POST" style="background-image: url({% static 'img/regis_seller-1.jpg' %});">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="seller_product_header loginHeader">
+                    <h3>Login </h3>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="form_control" id="loginPage">
+                    <form action="login" method="post" >
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="username" class="form-label">User Name</label>
+                            <input type="text" name="username" class="form-control" id="username"
+                                placeholder="Enter Your User Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="user_email" class="form-label">Email Address</label>
+                            <input type="email" name="user_email" class="form-control" id="user_email"
+                                placeholder="Enter Your Email Address" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" name="password" class="form-control" id="password"
+                                placeholder="Enter Your Password" required>
+                        </div>
+                        <div class="mb-3">
+                            <div class="sub_BTN">
+                                <button type="submit" id="subMan" class="btn btn-secondary btn-lg sure">Submit</button>
+                            </div>
+                        </div>
+                        <div class="checkTOL">
+                            {% for message in messages %}
+                                <h3>{{message}}</h3>
+                            {% endfor %}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</section>
 
-<div>
 
-</div>
-</body>
-</html>
+
+
+{% endblock %}
+
+
+
+
+

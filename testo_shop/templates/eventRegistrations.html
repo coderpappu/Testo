@@ -1,17 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Event Registrations </title>
-</head>
-<body>
-  <form action="shopEvent" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <input type="text" name="e_name" placeholder="Event Name"/><br>
-    <input type="text" name="e_desc" placeholder="Event Desc"/><br>
-    <input type="date" name="e_date" placeholder="Event Date"/><br>
-    <input type="file" name="e_img" placeholder="Your Name "/><br>
-    <input type="submit" value="save"/><br>
-  </form>
-</body>
-</html>
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+<section class="seller_Product_POST" style="background-image: url({% static 'img/regis_seller.jpg' %});">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="seller_product_header loginHeader">
+          <h3>Event Registration </h3>
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="form_control" id="loginPage">
+          <form action="shopEvent" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="e_name" class="form-label">Event Name</label>
+              <input type="text" name="e_name" class="form-control" id="e_name" placeholder="Enter Your Event Name" required>
+            </div>
+            <div class="mb-3">
+              <label for="e_desc" class="form-label">Event Description </label>
+              <input type="text" name="e_desc" class="form-control" id="e_desc"
+                placeholder="Enter Your Event Description" required>
+            </div>
+            <div class="mb-3">
+              <label for="e_date" class="form-label">Event Date </label>
+              <input type="date" name="e_date" class="form-control" id="e_date"
+                placeholder="Enter Your Event Date" required>
+            </div>
+            <div class="mb-3">
+              <label for="e_img" class="form-label">Event Image </label>
+              <input type="file" name="e_img" class="form-control" id="e_img" placeholder="Enter Image" required>
+            </div>
+            
+            <div class="mb-3">
+              <div class="sub_BTN">
+                <button type="submit" id="subMan" class="btn btn-secondary btn-lg">Submit</button>
+              </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2"></div>
+</section>
+
+
+
+
+{% endblock %}
+

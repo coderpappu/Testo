@@ -1,4 +1,84 @@
+
+
+{% extends 'index.html' %}
+{% block content %}
 {% load static %}
+<section class="seller_Product_POST" style="background-image: url({% static 'img/post_banner.jpg' %});">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="seller_product_header">
+                    <h3>Edit Your Product </h3>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="form_control">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="pro_name"class="form-label">Product Name</label>
+                            <input type="text" name="pro_name" value="{{product_Update.pro_name}}" class="form-control"
+                                id="pro_name"
+                                placeholder="Enter Your Product Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="shop_name"  class="form-label">Shop
+                                Name</label>
+                            <input type="text" name="shop_name" value="{{product_Update.pro_shopName}}"
+                                 class="form-control" id="shop_name"
+                                placeholder="Enter Your shop Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="pro_desc" class="form-label">Product
+                                Description</label>
+                            <input type="text" name="pro_desc" value="{{product_Update.pro_desc}}" class="form-control"
+                                id="pro_desc"
+                                placeholder="Enter Your Product Description">
+                        </div>
+                        <div class="mb-3">
+                            <label for="pro_price" class="form-label">Product Price</label>
+                            <input type="number" name="pro_price" value="{{product_Update.pro_price}}"
+                                class="form-control" id="pro_price"
+                                placeholder="Enter Your Product Price">
+                        </div>
+                        <div class="mb-3">
+                            <label for="pro_id" class="form-label">Product Id</label>
+                            <input type="text" name="pro_id" value="{{product_Update.pro_ID}}" class="form-control"
+                                id="prod_id"
+                                placeholder="Enter Your Product Id">
+                        </div>
+                        <div class="mb-3">
+                            <label for="pro_img"  class="form-label">Product
+                                Id</label>
+                            <input type="file" name="pro_img" value="{% static 'img/pro_img' %}"
+                                class="form-control" id="pro_img"
+                                placeholder="Enter Your Product Id">
+                                <div class="pro_img">
+                                    <img src="{{product_Update.pro_img.url}}" alt="">
+                                </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="sub_BTN">
+                                <button type="submit" id="subMan" class="btn btn-secondary btn-lg">Submit</button>
+                            </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</section>
+
+
+
+
+{% endblock %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,8 +94,14 @@
         <input type="text" name="pro_desc" value="{{product_Update.pro_desc}}" placeholder=" product desc"><br>
         <input type="number" name="pro_price" value="{{product_Update.pro_price}}" placeholder=" product price"><br>
         <input type="text" name="pro_id" value="{{product_Update.pro_ID}}" placeholder=" product id"><br>
-        <input type="file" name="pro_img" value="{%  static 'img/product_Update.pro_img' %}" placeholder=" product name"><br>
+        <img src="{{product_Update.pro_img.url}}" alt="">
+        <input type="file" name="pro_img"
+            value="{{product_Update.pro_img.url}}"
+            placeholder=" product name"><br>
         <input type="submit" name="save" ><br>
     </form>
+
+
+    
 </body>
 </html>

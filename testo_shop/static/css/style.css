@@ -21,6 +21,7 @@ a#mynavBar {
     text-transform: uppercase;
     margin-right: 23px;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .hero_burger {
@@ -126,11 +127,16 @@ img#iconImg {
     font-size: 16px;
     color: #7b7575;
 }
-
 .add_TO_cart {
     padding: 4px;
     border-radius: 5px;
     border: 1px solid #ddd;
+    cursor: pointer;
+    transition: 1s;
+}
+.add_TO_cart:hover {
+    background: #e37100;
+    color: #fff;
 }
 
 .add_TO_cart h3 {
@@ -253,6 +259,8 @@ td#tpdelete a {
 .shopper_img img {
     border-radius: 7px;
     transition: 1s;
+    width: 209px;
+    height: 167px;
 }
 
 .shopper_img img:hover {
@@ -728,9 +736,9 @@ section.shop_Product_add img {
 
 .class_product_single_box .pro_img img {
     width: 100%;
+    height: auto;
     transition: 1s;
 }
-
 .class_product_single_box .pro_img img:hover {
     transform: scale(1.1);
 }
@@ -1324,9 +1332,11 @@ section.seller_Product_POST {
 }
 
 .form_control #subMan {
-    margin: 17px 318px;
+    margin: 18px 0px;
 }
-
+.sub_BTN {
+    text-align: center;
+}
 
 /*user and seller different Link*/
 
@@ -1434,4 +1444,54 @@ div#margin a {
 }
 .user_data {
     margin-left: 116px;
+}
+div#rgis_Man {
+background: #ffffff2e;
+padding: 44px 61px;
+border-radius: 15px;
+color: #fff;
+box-shadow: 4px 4px 23px #ffffff29,
+-2px -5px 23px #ffffffba;
+margin-bottom: 20px;
+}
+.seller_regis_header{
+    margin: 60px ;
+}
+.seller_regis_header h3 {
+    
+    font-size: 39px;
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    text-align: center;
+    color: #cacaca;
+    text-shadow: 0px -1px 4px #ffffff;
+}
+div#loginPage {
+    margin-bottom: 117px;
+}
+.seller_product_header.loginHeader h3 {
+    color: #fff !important;
+}
+
+div#loginPage {
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 32px 75px;
+}
+.pro_img img {
+    width: 402px;
+    height: 400px;
+}
+.checkTOL h3 {
+    color: red;
+    font-size: 22px;
+    font-family: sans-serif;
+}
+
+.checkTOL {
+
+    background: #fff;
+    border-radius: 5px;
+    text-align: center;
 }

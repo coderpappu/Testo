@@ -1,23 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Shoper Registrations</title>
-</head>
-<body>
-    <form action="shopperRegis" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input type="text" name="user_name" placeholder="Your Name"><br>
-        <input type="text" name="shop_name" placeholder="Shop Name"><br>
-        <input type="email" name="user_mail" placeholder="Mail"><br>
-        <input type="number" name="user_mobile" placeholder="Your Mobile Number"><br>
-        <input type="text" name="user_address" placeholder="user_address"><br>
-        <input type="date" name="user_B_date" placeholder=" your Birth Date"><br>
-        <input type="text" name="user_MBank" placeholder="Mobile Bank Name"><br>
-        <input type="file" name="user_img" ><br>
-        <input type="password" name="password1" placeholder="Password"><br>
-        <input type="password" name="password2" placeholder="Confirm Password"><br>
-        <input type="submit" name="save">
-    </form>
-</body>
-</html>
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+<section class="seller_Product_POST" style="background-image: url({% static 'img/regis_seller-final.jpg' %});">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="seller_regis_header">
+                    <h3>Seller Registration </h3>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="form_control" id="rgis_Man" >
+                    <form action="shopperRegis"  method="post" enctype="multipart/form-data" >
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="user_name" class="form-label">Your Name</label>
+                            <input type="text" name="user_name "  class="form-control" id="user_name"
+                                placeholder="Enter Your Name" required>
+                        </div>
+                       <div class="mb-3">
+                           <label for="shop_name" class="form-label">Your Shop Name</label>
+                           <input type="text" name="shop_name" class="form-control" id="shop_name"
+                               placeholder="Enter Your Shop Name" required >
+
+                       </div>
+                       <div class="mb-3">
+                           <label for="user_mail" class="form-label">Mail Address</label>
+                           <input type="email" name="user_mail" class="form-control" id="user_mail"
+                               placeholder="Enter Mail Address" required>
+                       </div>
+                       <div class="mb-3">
+                           <label for="user_mobile" class="form-label">Mobile</label>
+                           <input type="number" name="user_mobile" class="form-control" id="user_mobile"
+                               placeholder="Demo: +8801884815990" required>
+                       </div>
+                       <div class="mb-3">
+                           <label for="user_address" class="form-label">Address</label>
+                           <input type="text" name="user_address" class="form-control" id="user_address"
+                               placeholder="Enter Your Address" required>
+                       </div>
+                       <div class="mb-3">
+                           <label for="user_B_date" class="form-label">Birth Date</label>
+                           <input type="date" name="user_B_date" class="form-control" id="user_B_date"
+                               placeholder="Enter Your Birth Date" required>
+                       </div>
+                       <div class="mb-3">
+                           <label for="user_MBank" class="form-label">Mobile Banking</label>
+                           <input type="text" name="user_MBank" class="form-control" id="user_MBank"
+                               placeholder="Enter Your Mobile Banking" required>
+                       </div>
+                       <div class="mb-3">
+                           <label for="user_img" class="form-label">Your Image</label>
+                           <input type="file" name="user_img" class="form-control" id="user_img"
+                               placeholder="Upload your Image" required>
+                       </div>
+                       <div class="mb-3">
+                           <label for="password1" class="form-label">Password</label>
+                           <input type="password" name="password1" class="form-control" id="password1"
+                               placeholder="Enter Your Password" required>
+                       </div>
+                       <div class="mb-3">
+                           <label for="password2" class="form-label">Confirm Password</label>
+                           <input type="password" name="password2" class="form-control" id="password2"
+                               placeholder="Confirm Password " required>
+                       </div>
+
+                        <div class="mb-3">
+                            <div class="sub_BTN">
+                            <button type="submit" id="subMan" class="btn btn-secondary btn-lg">Submit</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</section>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+

@@ -10,6 +10,7 @@
     <link rel="stylesheet"  type="text/css" href="{% static 'css/owl.theme.default.min.css' %}">
     <link  rel="stylesheet" type="text/css" href="{%static 'css/bootstrap.min.css'%}">
     <link rel="stylesheet" type="text/css" href="{%static 'css/style.css'%}">
+    <link rel="stylesheet" href="{%static 'js/app.js'%}">
 
 </head>
 <body>
@@ -60,7 +61,7 @@
                        <a class="nav-link active" id="mynavBar" aria-current="page" href="shopperApp/userORseller">SignUp</a>
                    </li>
                    <li class="nav-item">
-                       <a class="nav-link active" id="mynavBar" aria-current="page" href="shopperApp/login">Login</a>
+                       <a class="nav-link active " id="mynavBar" aria-current="page" href="shopperApp/login">Login</a>
                    </li>
                     {% endif %}
                     <li class="nav-item">
@@ -180,8 +181,8 @@
                                     <div class="item_desc">
                                         <p>{{product.pro_desc}}</p>
                                     </div>
-                                    <div class="add_TO_cart">
-                                        <h3>ADD TO CART</h3>
+                                    <div class="add_TO_cart" id="Link_click">
+                                        <h3 >ADD TO CART</h3>
                                     </div>
                                 </div>
                             </div>
@@ -422,7 +423,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="else_button">
+                                        <div class="else_button" >
                                             <h4><a href="#">Explore Full Menu</a></h4>
                                         </div>
                                     </div>
