@@ -20,21 +20,21 @@
             {% csrf_token %}
             <div class="mb-3">
               <label for="e_name" class="form-label">Event Name</label>
-              <input type="text" name="e_name" class="form-control" id="e_name" placeholder="Enter Your Event Name">
+              <input type="text" name="e_name" class="form-control" id="e_name" placeholder="Enter Your Event Name" required>
             </div>
             <div class="mb-3">
               <label for="e_desc" class="form-label">Event Description </label>
               <input type="text" name="e_desc" class="form-control" id="e_desc"
-                placeholder="Enter Your Event Description">
+                placeholder="Enter Your Event Description" required>
             </div>
             <div class="mb-3">
               <label for="e_date" class="form-label">Event Date </label>
               <input type="date" name="e_date" class="form-control" id="e_date"
-                placeholder="Enter Your Event Date">
+                placeholder="Enter Your Event Date" required>
             </div>
             <div class="mb-3">
               <label for="e_img" class="form-label">Event Image </label>
-              <input type="file" name="e_img" class="form-control" id="e_img" placeholder="Enter Image">
+              <input type="file" name="e_img" class="form-control" id="e_img" placeholder="Enter Image" required>
             </div>
             
             <div class="mb-3">

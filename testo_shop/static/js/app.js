@@ -1,23 +1,4 @@
-// responsive : {
-//     // breakpoint from 0 up
-//     0 : {
-//         option1 : value,
-//         option2 : value,
-//         ...
-//     },
-//     // breakpoint from 480 up
-//     480 : {
-//         option1 : value,
-//         option2 : value,
-//         ...
-//     },
-//     // breakpoint from 768 up
-//     768 : {
-//         option1 : value,
-//         option2 : value,
-//         ...
-//     }
-// }
+
 $('.owl-carousel').owlCarousel({
     loop:true,
     margin:10,
@@ -63,6 +44,21 @@ $('.our_admin_carousel').owlCarousel({
             loop:true
         }
     }
+})
 
 
 
+var login = document.querySelector("#Link_click")
+login.addEventListener("click", function () {
+    console.log("Hmm");
+    let sure = confirm("Are You Sure Want To Login ?")
+    // if (sure == true){
+    //     alert("OK")
+
+    // }
+
+    var log = (sure ==true) ? window.location = "shopperApp/login" : alert("KKK");
+})
+
+
+alert("Welcome TO Our Testo Burger Shop")

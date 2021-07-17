@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
+from django.contrib import messages
 from shopApp .models import shopperProduct,ShopperRegistration
 from django.contrib.auth.models import User,auth
 
@@ -53,7 +54,8 @@ def login(request):
             return redirect('/')
 
         else:
-            return HttpResponse("OI")
+            messages.info(request, "Your Password Or Other Information Is Incorrect")
+            return redirect("login")
     else:
 
         return render(request,"login.html")

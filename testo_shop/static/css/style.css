@@ -127,11 +127,16 @@ img#iconImg {
     font-size: 16px;
     color: #7b7575;
 }
-
 .add_TO_cart {
     padding: 4px;
     border-radius: 5px;
     border: 1px solid #ddd;
+    cursor: pointer;
+    transition: 1s;
+}
+.add_TO_cart:hover {
+    background: #e37100;
+    color: #fff;
 }
 
 .add_TO_cart h3 {
@@ -1477,4 +1482,16 @@ div#loginPage {
 .pro_img img {
     width: 402px;
     height: 400px;
+}
+.checkTOL h3 {
+    color: red;
+    font-size: 22px;
+    font-family: sans-serif;
+}
+
+.checkTOL {
+
+    background: #fff;
+    border-radius: 5px;
+    text-align: center;
 }

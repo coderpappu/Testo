@@ -35,9 +35,14 @@
                         </div>
                         <div class="mb-3">
                             <div class="sub_BTN">
-                                <button type="submit" id="subMan" class="btn btn-secondary btn-lg">Submit</button>
+                                <button type="submit" id="subMan" class="btn btn-secondary btn-lg sure">Submit</button>
                             </div>
-
+                        </div>
+                        <div class="checkTOL">
+                            {% for message in messages %}
+                                <h3>{{message}}</h3>
+                            {% endfor %}
+                        </div>
                     </form>
                 </div>
             </div>
