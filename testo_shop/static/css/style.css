@@ -1495,3 +1495,6 @@ div#loginPage {
     border-radius: 5px;
     text-align: center;
 }
+.admin_Panel_Img img {
+    width: 100%;
+}

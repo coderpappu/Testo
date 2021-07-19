@@ -5,12 +5,17 @@
     <title> Shop Index</title>
 
     {% load static %}
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link rel="stylesheet" type="text/css" href="{%static 'css/animate.css'%}">
     <link rel="stylesheet" type="text/css"  href="{% static 'css/owl.carousel.css' %}">
     <link rel="stylesheet"  type="text/css" href="{% static 'css/owl.carousel.min.css' %}">
     <link rel="stylesheet"  type="text/css" href="{% static 'css/owl.theme.default.min.css' %}">
     <link  rel="stylesheet" type="text/css" href="{%static 'css/bootstrap.min.css'%}">
     <link rel="stylesheet" type="text/css" href="{%static 'css/style.css'%}">
-    <link rel="stylesheet" href="{%static 'js/app.js'%}">
+
 
 </head>
 <body>
@@ -67,13 +72,13 @@
                     <li class="nav-item">
                         <div class="user_data">
 
-                            <div class="user_img">
+                            <div class="user_img wow animate__bounce">
                                 <img src="{% static 'img/profile.png' %}" alt="">
                             </div>
                         </div>
                     </li>
                     {% if user.is_authenticated %}
-                     
+
                      <li class="nav-item">
                          <div class="user_NAME">
                              <h5>{{user.username}}</h5>
@@ -103,7 +108,7 @@
                         <h2>BIG BURGER,<br> LITTLE MONEY</h2>
                     </div>
                     <div class="col-md-12">
-                        <div class="herp_burger_img">
+                        <div class="herp_burger_img wow animate__backInUp" style="animate__duration:60s;">
                             <img src="{% static 'img/hero_burger.png' %}" alt="hero_burger">
                         </div>
                     </div>
@@ -159,7 +164,8 @@
                             <div class="col-md-3">
                                 <div class="burger_single_offer">
                                     <div class="burger_img">
-                                        <img src="{{product.pro_img.url}}" alt="burger 01">
+                                        <img src="{{product.pro_img.url}}" alt="burger 01" class="wow animate__pulse"
+                                            style="animation-duration: 4s; animation-iteration-count: infinite;">
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
@@ -212,8 +218,9 @@
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <div class="shop_prod_img_add">
-                         <img src="{% static 'img/burger_01.png' %}" alt="Burger No 01.png">
+                    <div class="shop_prod_img_add ">
+                         <img src="{% static 'img/burger_01.png' %}" alt="Burger No 01.png"
+                             class="wow animate__backInRight" style="animation-duration: 2s">
 <!--                        <img src="img/burger_01.png" alt="">-->
                     </div>
                 </div>
@@ -223,7 +230,8 @@
                             <div class="single_burger_add_setting">
                             <div class="single_Burger_add">
                                 <div class="single_burger_add_link_img">
-                                     <img src="{% static 'img/burger_02.png' %}" alt="">
+                                     <img src="{% static 'img/burger_02.png' %}" alt="" class="wow animate__pulse"
+                                         style="animation-iteration-count: infinite; animation-duration: 3s">
                                 </div>
                                 <div class="single_burger_add_link_name">
                                     <h3>Komil Burger</h3>
@@ -233,7 +241,9 @@
                         <div class="col-md-12">
                             <div class="single_Burger_add">
                                 <div class="single_burger_add_link_img">
-                                     <img src="{% static 'img/burger_02.png' %}" alt="single_burger.png">
+                                     <img src="{% static 'img/burger_02.png' %}" alt="single_burger.png"
+                                         class="wow animate__pulse" style="animation-iteration-count: infinite;
+                                         animation-duration: 3s">
                                 </div>
                                 <div class="single_burger_add_link_name">
                                     <h3>Komil Burger</h3>
@@ -440,7 +450,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="price_off">
-                        <div class="product_price_img">
+                        <div class="product_price_img wow animate__backInLeft" style="animation-duration: 1s; ">
                             <img src="{% static 'img/smokey_burger-06.png' %}" alt="">
                             <div class="price_Img">
                                 <img src="{% static 'img/discount-badge-red.png' %}" alt="">
@@ -468,7 +478,9 @@
                                 <div class="onion_single_box">
                                     <div class="onion_top_box">
                                         <div class="onion_img">
-                                            <img src="{% static 'img/onion_side-01-1.png' %}" alt="onion">
+                                            <img src="{% static 'img/onion_side-01-1.png' %}" alt="onion"
+                                                class="wow animate__pulse" style="animation-duration: 3s;
+                                                animation-iteration-count: infinite;">
                                             <div class="love_rate">
                                                 <i class="far fa-heart"></i>
                                             </div>
@@ -513,7 +525,9 @@
                                  <div class="onion_single_box">
                                      <div class="onion_top_box">
                                          <div class="onion_img">
-                                             <img src="{% static 'img/onion_side-01-1.png' %}" alt="onion">
+                                             <img src="{% static 'img/onion_side-01-1.png' %}" alt="onion"
+                                                 class="wow animate__pulse" style="animation-duration: 3s;
+                                                 animation-iteration-count: infinite;">
                                              <div class="love_rate">
                                                  <i class="far fa-heart"></i>
                                              </div>
@@ -565,12 +579,14 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="special_Food_single_box">
-                            <img src="{% static 'img/offer-1.jpg' %}" alt="offer.jpg">
+                            <img src="{% static 'img/offer-1.jpg' %}" alt="offer.jpg" class = "wow animate__backInLeft"
+                                style="animation-duration: 1s; ">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="special_Food_single_box">
-                            <img src="{% static 'img/offer-2.jpg' %}" alt="offer.jpg">
+                            <img src="{% static 'img/offer-2.jpg' %}" alt="offer.jpg" class="wow animate__backInRight"
+                                style="animation-duration: 1s; ">
                         </div>
                     </div>
                 </div>
@@ -688,7 +704,8 @@
                 </div>
                 <div class="col-md-6">
                     <div class="store_e_shop_app_Img">
-                        <img src="{% static 'img/e-shop.png' %}" alt="e_shop">
+                        <img src="{% static 'img/e-shop.png' %}" alt="e_shop" class="wow animate__backInRight"
+                            style=" animation-duration: 1.5s;">
                     </div>
                 </div>
             </div>
@@ -699,7 +716,8 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="nothing_brings_Img">
-                        <img src="{% static 'img/about-01-img.png' %}" alt="">
+                        <img src="{% static 'img/about-01-img.png' %}" alt="" class="wow animate__backInLeft"
+                            class="wow animate__backInRight" style="animation-duration: 1.5s; ">
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -1081,6 +1099,10 @@
 {% endblock %}
 
     <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script>
+         new WOW().init();
+    </script>
     <script src="{% static 'js/owl.carousel.js' %}"></script>
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
     <script src="https://kit.fontawesome.com/b1a7f8a11f.js" crossorigin="anonymous"></script>
