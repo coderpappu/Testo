@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.contrib import messages
 from shopApp .models import shopperProduct,ShopperRegistration
 from django.contrib.auth.models import User,auth
+# from django.contrib.auth import login,logout
 
 
 # Create your views here.
@@ -41,7 +42,7 @@ def shopperRegistrations(request):
     else:
         return render(request, "shopper_regis.html")
 
-def login(request):
+def loginUser(request):
     if request.method == 'POST':
         username = request.POST['username']
         user_email = request.POST['user_email']
@@ -51,7 +52,15 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            return redirect('/')
+
+            data = User.objects.get(username=username)
+            dataI = User.objects.get(username=username)
+
+            request.session['username'] = data.username
+            request.session['email'] = data.email
+            request.session['password'] = data.password
+
+            return redirect('/', {"data" : dataI})
 
         else:
             messages.info(request, "Your Password Or Other Information Is Incorrect")
@@ -61,6 +70,9 @@ def login(request):
         return render(request,"login.html")
 
 def logout(request):
+
+    del request.session['username']
+    del request.session['email']
     auth.logout(request)
     return redirect('/')
 
