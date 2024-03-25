@@ -1,0 +1,14 @@
+asgiref==3.8.1
+distlib==0.3.8
+filelock==3.13.1
+mysqlclient==2.2.4
+pbr==6.0.0
+pillow==10.2.0
+platformdirs==4.2.0
+sqlparse==0.4.4
+stevedore==5.2.0
+tzdata==2024.1
+virtualenv==20.25.1
+virtualenv-clone==0.5.7
+virtualenvwrapper==6.1.0
+virtualenvwrapper-win==1.2.7
